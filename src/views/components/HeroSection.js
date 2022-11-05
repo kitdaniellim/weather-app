@@ -2,7 +2,7 @@ import React from 'react';
 import '../../App.css';
 import { Button } from './Button';
 import '../../assets/css/HeroSection.css';
-import cloudVideo from "../../assets/videos/video-1.mp4";
+import cloudVideo from "../../assets/videos/clouds.mp4";
 
 function HeroSection() {
   return (
