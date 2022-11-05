@@ -1,22 +1,29 @@
-import React from 'react';
-import '../../../App.css';
-// import cloudVideo from "../../assets/videos/clouds.mp4";
-import { Button } from '../../components/Button.js';
+import React from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 
-function Login() {
+import "../../../App.css";
+import { Button } from "../../components/Button.js";
+
+const LoginButton = () => {
+  const { loginWithRedirect } = useAuth0();
+
   return (
-    <div className='hero-container'>
-      <div className='hero-btns'>
-        <Button
-          className='btns'
-          buttonStyle='btn--outline'
-          buttonSize='btn--large'
+    <div className="">
+      <div className="">
+        <button
+          onClick={() =>
+            loginWithRedirect({
+              appState: {
+                returnTo: "/home",
+              },
+            })
+          }
         >
-          LOGIN
-        </Button>
+          Log In
+        </button>
       </div>
     </div>
   );
-}
+};
 
-export default Login;
+export default LoginButton;

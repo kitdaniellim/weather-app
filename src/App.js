@@ -1,25 +1,46 @@
-import React from 'react';
-import Navbar from './views/components/Navbar';
-import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from './views/pages/inside/Home';
-import Weather from './views/pages/inside/Weather';
-import Login from './views/pages/auth/Login';
-import SignUp from './views/pages/auth/SignUp';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-function App() {
+// Components
+import Navbar from "./views/components/Navbar";
+import Loading from "./views/components/Loading";
+import Footer from "./views/components/Footer";
+
+import "./App.css";
+
+// Pages
+import Landing from "./views/pages/inside/Landing";
+import Home from "./views/pages/inside/Home";
+import Weather from "./views/pages/inside/Weather";
+
+// Auth0
+import { useAuth0 } from "@auth0/auth0-react";
+import history from "./utils/history";
+
+const App = () => {
+  const { isLoading, error } = useAuth0();
+
+  if (error) {
+    return <div>Oops... {error.message}</div>;
+  }
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
-    <>
-      <Router>
+    <Router history={history}>
+      <div id="app" className="d-flex flex-column h-100">
         <Navbar />
         <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/weather' component={Weather} />
-          <Route path='/login' component={Login} />
+          <Route path="/" exact component={Landing} />
+          <Route path="/home" component={Home} />
+          <Route path="/weather" component={Weather} />
         </Switch>
-      </Router>
-    </>
+        <Footer />
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
