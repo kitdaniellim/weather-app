@@ -1,12 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Container } from 'react-bootstrap';
 
 // Components
 import Navbar from "./views/components/Navbar";
 import Loading from "./views/components/Loading";
 import Footer from "./views/components/Footer";
 
+// Styles
 import "./App.css";
+import './assets/scss/styles.scss';
 
 // Pages
 import Landing from "./views/pages/inside/Landing";
@@ -30,7 +33,7 @@ const App = () => {
 
   return (
     <Router history={history}>
-      <div id="app" className="d-flex flex-column h-100">
+      <Container fluid id="app" className="bg-secondary p-0 m-0" >
         <Navbar />
         <Switch>
           <Route path="/" exact component={Landing} />
@@ -38,7 +41,7 @@ const App = () => {
           <Route path="/weather" component={Weather} />
         </Switch>
         <Footer />
-      </div>
+      </Container>
     </Router>
   );
 };

@@ -1,21 +1,20 @@
 import React from "react";
-import "../../../App.css";
-import '../../../assets/css/HeroSection.css';
-import Login from "../auth/Login";
-import cloudVideo from "../../../assets/videos/clouds.mp4";
+import { Container } from "react-bootstrap";
 
-function Landing() {
+// Custom Components
+import Login from "../auth/Login";
+import HeroSection from "../../components/HeroSection.js";
+
+const Landing = () => {
   return (
-    <>
-      <div className="hero-container">
-        <video src={cloudVideo} autoPlay loop muted />
-        <p>Welcome to the weather forecast web application. Please login with your Github user</p>
-        <div className="hero-btns">
-          <Login/>
-        </div>
-      </div>
-    </>
+    <HeroSection>
+      <Container>
+        <h4>Welcome to the weather forecast web application. Please login with your Github user</h4>
+      </Container>
+      <Login/>
+    </HeroSection>
   );
-}
+};
 
 export default Landing;
+

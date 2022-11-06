@@ -1,32 +1,13 @@
 import React from 'react';
-import '../../App.css';
-import { Button } from './Button';
 import '../../assets/css/HeroSection.css';
 import cloudVideo from "../../assets/videos/clouds.mp4";
 
-function HeroSection() {
+const HeroSection = (props) => {
+
   return (
     <div className='hero-container'>
       <video src={cloudVideo} autoPlay loop muted />
-      <h1>ADVENTURE AWAITS</h1>
-      <p>What are you waiting for?</p>
-      <div className='hero-btns'>
-        <Button
-          className='btns'
-          buttonStyle='btn--outline'
-          buttonSize='btn--large'
-        >
-          GET STARTED
-        </Button>
-        <Button
-          className='btns'
-          buttonStyle='btn--primary'
-          buttonSize='btn--large'
-          onClick={console.log('hey')}
-        >
-          WATCH TRAILER <i className='far fa-play-circle' />
-        </Button>
-      </div>
+      { props.children }
     </div>
   );
 }

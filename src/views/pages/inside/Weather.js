@@ -1,6 +1,17 @@
-import React from 'react';
-import '../../../App.css';
+import React from "react";
+import { Container } from "react-bootstrap";
 
-export default function Weather() {
-  return <h1 className='services'>Weather</h1>;
-}
+// Custom Components
+import CustomButton from "../../components/CustomButton.js";
+import HeroSection from "../../components/HeroSection.js";
+
+const Weather = () => {
+  return (
+    <HeroSection>
+      <p>This is the Weather</p>
+      <CustomButton to="/home" label="Go Back Home" />
+    </HeroSection>
+  );
+};
+
+export default Weather;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 
-import { Button } from "./Button";
+import { Button } from "./CustomButton";
 import { Link } from "react-router-dom";
 import "../../assets/css/Navbar.css";
 
@@ -38,7 +38,7 @@ function Navbar() {
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
             <i class="fa fa-cloud" />
-            Weather Forecast
+            <span className="text-primary"> Weather Forecast </span>  
           </Link>
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />

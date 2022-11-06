@@ -6,8 +6,6 @@ import { Auth0Provider } from "@auth0/auth0-react";
 import history from "./utils/history";
 import { getConfig } from "./config";
 
-// ReactDOM.render(<App />, document.getElementById("root"));
-
 const onRedirectCallback = (appState) => {
     history.push(
       appState && appState.returnTo ? appState.returnTo : window.location.pathname
