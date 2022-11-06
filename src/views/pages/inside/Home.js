@@ -10,9 +10,11 @@ const Home = () => {
   const { user } = useAuth0();
   return (
     <HeroSection>
-      <h1 className="text-white"> { user.nickname } </h1>
-      <p> { user.email } </p>
-      <p>City</p>
+      <Container className="mb-5 w-100 text-center">
+        <h1 className="text-white"> {user.nickname} </h1>
+        <p className="text-white"> {user.email} </p>
+        <p className="text-white"> City </p>
+      </Container>
       <CustomButton to="/weather" label="Display Weather" />
     </HeroSection>
   );

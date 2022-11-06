@@ -8,13 +8,15 @@ import HeroSection from "../../components/HeroSection.js";
 const Landing = () => {
   return (
     <HeroSection>
-      <Container>
-        <h4>Welcome to the weather forecast web application. Please login with your Github user</h4>
+      <Container className="px-5 d-flex justify-content-center align-items-center">
+        <h4 className="text-white">
+          Welcome to the weather forecast web application. Please login with your
+          Github user
+        </h4>
       </Container>
-      <Login/>
+      <Login />
     </HeroSection>
   );
 };
 
 export default Landing;
-

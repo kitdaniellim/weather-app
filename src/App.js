@@ -33,7 +33,7 @@ const App = () => {
 
   return (
     <Router history={history}>
-      <Container fluid id="app" className="bg-secondary p-0 m-0" >
+      <div id="app" className="d-flex flex-column h-100">
         <Navbar />
         <Switch>
           <Route path="/" exact component={Landing} />
@@ -41,7 +41,7 @@ const App = () => {
           <Route path="/weather" component={Weather} />
         </Switch>
         <Footer />
-      </Container>
+      </div>
     </Router>
   );
 };

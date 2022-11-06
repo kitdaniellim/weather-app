@@ -8,7 +8,9 @@ import HeroSection from "../../components/HeroSection.js";
 const Weather = () => {
   return (
     <HeroSection>
-      <p>This is the Weather</p>
+      <p className="text-white">
+        This is the Weather
+      </p>
       <CustomButton to="/home" label="Go Back Home" />
     </HeroSection>
   );
