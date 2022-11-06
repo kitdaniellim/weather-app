@@ -4,10 +4,17 @@ React.js Weather App 24-Hour Coding Challenge
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## App Screenshots
+![image](https://user-images.githubusercontent.com/60454465/200169247-3784cd17-85ec-4036-b473-1f76c9e64476.png)
+![image](https://user-images.githubusercontent.com/60454465/200169282-3c1cdedd-a6da-4168-b407-35fd87e5066b.png)
+![image](https://user-images.githubusercontent.com/60454465/200169305-ffbe4ce4-2642-4c03-a139-01305cdc878a.png)
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+
+Installs all dependencies inside package.json.
 
 ### `npm start`
 
