@@ -9,10 +9,11 @@ const Landing = () => {
   return (
     <HeroSection>
       <Container className="px-5 d-flex justify-content-center align-items-center">
-        <h4 className="text-white">
-          Welcome to the weather forecast web application. Please login with your
-          Github user
-        </h4>
+          <h5 className="text-white text-center">
+            Welcome to the weather forecast web application. Please login with
+            your Github user to use the application and view the weather in your
+            city.
+          </h5>
       </Container>
       <Login />
     </HeroSection>

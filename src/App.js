@@ -38,7 +38,7 @@ const App = () => {
         <Switch>
           <Route path="/" exact component={Landing} />
           <Route path="/home" component={Home} />
-          <Route path="/weather" component={Weather} />
+          <Route path="/weather/:lat/:lon" component={Weather} />
         </Switch>
         <Footer />
       </div>

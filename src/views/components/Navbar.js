@@ -25,7 +25,7 @@ function Navbar() {
 
   window.addEventListener("resize", showButton);
 
-  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+  const { isAuthenticated, logout } = useAuth0();
 
   const logoutWithRedirect = () =>
     logout({
@@ -42,13 +42,15 @@ function Navbar() {
             onClick={closeMobileMenu}
           >
             <i className="fa fa-cloud pt-2 pt-lg-0" />
-            <h2 className="text-primary align-self-center mb-0 ml-2 d-none d-lg-flex">
+            <h3 className="text-primary align-self-center mb-0 ml-2 d-none d-lg-flex">
               Weather Forecast
-            </h2>
+            </h3>
           </Link>
-          <div className="menu-icon" onClick={handleClick}>
-            <i className={click ? "fas fa-times" : "fas fa-bars"} />
-          </div>
+          {isAuthenticated && (
+            <div className="menu-icon" onClick={handleClick}>
+              <i className={click ? "fas fa-times" : "fas fa-bars"} />
+            </div>
+          )}
           <div>
             <ul className={click ? "nav-menu pt-3 active" : "nav-menu pt-3"}>
               {isAuthenticated && (
@@ -65,7 +67,7 @@ function Navbar() {
               {isAuthenticated && (
                 <li className="nav-item">
                   <Link
-                    to="/weather"
+                    to="/weather/1/1"
                     className="nav-links"
                     onClick={closeMobileMenu}
                   >
